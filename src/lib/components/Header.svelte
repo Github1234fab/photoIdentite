@@ -1,4 +1,4 @@
-src/lib/components/Header.svelte
+<!-- src/lib/components/Header.svelte -->
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 </script>
