@@ -19,7 +19,7 @@
       <!-- Card 1 -->
       <div class="service-card {seoStore.intention?.slug === 'photo-identite-ants' || seoStore.intention?.slug === 'photo-permis-de-conduire' ? 'active-seo' : ''}">
         <div class="card-image-wrapper">
-          <img src={ephotoImg} alt="e-Photo ANTS" class="card-image" />
+          <img src={ephotoImg} alt="Planche ANTS" class="card-image" />
         </div>
         <div class="card-body-content">
           <div>
