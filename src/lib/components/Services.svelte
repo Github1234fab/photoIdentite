@@ -1,6 +1,11 @@
 <!-- src/lib/components/Services.svelte -->
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
+  import ephotoImg from '$lib/assets/e-photo_site.jpg';
+  import identiteImg from '$lib/assets/identite.jpg';
+  import enfantImg from '$lib/assets/enfant.jpg';
+  import visaImg from '$lib/assets/visa_site.jpg';
+  import linkedinImg from '$lib/assets/linkedin.jpg';
 </script>
 
 <section class="services-section" id="services">
@@ -13,61 +18,96 @@
     <div class="services-grid">
       <!-- Card 1 -->
       <div class="service-card {seoStore.intention?.slug === 'photo-identite-ants' || seoStore.intention?.slug === 'photo-permis-de-conduire' ? 'active-seo' : ''}">
-        <div class="service-icon"><i class="fa-solid fa-signature"></i></div>
-        <h3>e-Photo ANTS</h3>
-        <p class="subtitle">Permis de conduire & Titre de séjour</p>
-        <p class="description">Prise de vue + planche de 4 photos papier + transmission numérique signature ANTS.</p>
-        <div class="price-row">
-          <span class="price">16,99 €</span>
-          <span class="terms">Prêt en 5 min</span>
+        <div class="card-image-wrapper">
+          <img src={ephotoImg} alt="e-Photo ANTS" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-signature"></i></div>
+            <h3>e-Photo ANTS</h3>
+            <p class="subtitle">Permis & Titre de séjour</p>
+            <p class="description">Prise de vue + planche de 4 photos papier + transmission numérique signature ANTS.</p>
+          </div>
+          <div class="price-row">
+            <span class="price">16,99 €</span>
+            <span class="terms">Prêt en 5 min</span>
+          </div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="service-card {seoStore.intention?.slug === 'photo-passeport' || seoStore.intention?.slug === 'photo-carte-identite' ? 'active-seo' : ''}">
-        <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
-        <h3>Identité Officielle</h3>
-        <p class="subtitle">Passeport, CNI, Carte Vitale</p>
-        <p class="description">Prise de vue + planche de 6 photos papier officielles conformes aux critères mairie (Norme OACI).</p>
-        <div class="price-row">
-          <span class="price">14,99 €</span>
-          <span class="terms">Prêt en 5 min</span>
+        <div class="card-image-wrapper">
+          <img src={identiteImg} alt="Identité Officielle" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
+            <h3>Identité Officielle</h3>
+            <p class="subtitle">Passeport, CNI, Carte Vitale</p>
+            <p class="description">Prise de vue + planche de 6 photos papier officielles conformes aux critères mairie (Norme OACI).</p>
+          </div>
+          <div class="price-row">
+            <span class="price">14,99 €</span>
+            <span class="terms">Prêt en 5 min</span>
+          </div>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="service-card {seoStore.intention?.slug === 'photo-identite-bebe-enfant' ? 'active-seo' : ''}">
-        <div class="service-icon"><i class="fa-solid fa-baby-carriage"></i></div>
-        <h3>Spécial Bébé & Enfant</h3>
-        <p class="subtitle">Moins de 5 ans</p>
-        <p class="description">Créneau dédié de 30 min. Prise de vue calme et patiente pour garantir la conformité.</p>
-        <div class="price-row">
-          <span class="price">19,99 €</span>
-          <span class="terms">Séance 30 min</span>
+        <div class="card-image-wrapper">
+          <img src={enfantImg} alt="Spécial Bébé & Enfant" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+            <h3>Spécial Bébé & Enfant</h3>
+            <p class="subtitle">Moins de 5 ans</p>
+            <p class="description">Créneau dédié de 30 min. Prise de vue calme et patiente pour garantir la conformité.</p>
+          </div>
+          <div class="price-row">
+            <span class="price">19,99 €</span>
+            <span class="terms">Séance 30 min</span>
+          </div>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="service-card {seoStore.intention?.slug === 'photo-visa' ? 'active-seo' : ''}">
-        <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
-        <h3>Visas Officiels</h3>
-        <p class="subtitle">USA, Inde, Chine, Canada...</p>
-        <p class="description">Prise de vue et découpe spécifique aux normes des consulats étrangers.</p>
-        <div class="price-row">
-          <span class="price">16,99 €</span>
-          <span class="terms">Tous pays</span>
+        <div class="card-image-wrapper">
+          <img src={visaImg} alt="Visas Officiels" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3>Visas Officiels</h3>
+            <p class="subtitle">USA, Inde, Chine, Canada...</p>
+            <p class="description">Prise de vue et découpe spécifique aux normes des consulats étrangers.</p>
+          </div>
+          <div class="price-row">
+            <span class="price">16,99 €</span>
+            <span class="terms">Tous pays</span>
+          </div>
         </div>
       </div>
 
       <!-- Card 5 -->
       <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
-        <h3>Portrait Pro & CV</h3>
-        <p class="subtitle">Profil LinkedIn & CV</p>
-        <p class="description">Valorisez votre image de marque. Séance de prise de vue en studio avec retouche de qualité.</p>
-        <div class="price-row">
-          <span class="price">49 €</span>
-          <span class="terms">1 fichier HD retouché</span>
+        <div class="card-image-wrapper">
+          <img src={linkedinImg} alt="Portrait Pro & CV" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Portrait Pro & CV</h3>
+            <p class="subtitle">Profil LinkedIn & CV</p>
+            <p class="description">Valorisez votre image de marque. Séance de prise de vue en studio avec retouche de qualité.</p>
+          </div>
+          <div class="price-row">
+            <span class="price">49 €</span>
+            <span class="terms">1 fichier HD</span>
+          </div>
         </div>
       </div>
     </div>
@@ -122,15 +162,44 @@
 
   .service-card {
     background-color: white;
-    padding: 36px;
     border-radius: 20px;
     box-shadow: var(--shadow-premium);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 380px;
+    min-height: 520px;
     transition: var(--transition-smooth);
     border: 1px solid var(--border-color);
+    overflow: hidden;
+  }
+
+  .card-image-wrapper {
+    width: 100%;
+    height: 200px;
+padding: 10px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center 20%;
+    transition: var(--transition-smooth);
+  }
+
+  .service-card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  .card-body-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 
   .service-card:hover {

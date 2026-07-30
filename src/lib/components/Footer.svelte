@@ -1,4 +1,4 @@
-<!-- src/lib/components/Footer.svelte -->
+ <!-- src/lib/components/Footer.svelte -->
 <footer class="footer">
   <div class="container footer-grid">
     <div class="brand">
@@ -92,4 +92,4 @@
       gap: 30px;
     }
   }
-</style>
+</style> 

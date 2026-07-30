@@ -223,4 +223,16 @@
       gap: 40px;
     }
   }
+
+  @media (max-width: 640px) {
+    .booking-card {
+      padding: 24px 16px;
+    }
+    .btn-rdv {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+  }
 </style>

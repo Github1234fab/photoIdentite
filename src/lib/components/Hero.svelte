@@ -1,4 +1,4 @@
-<!-- src/lib/components/Hero.svelte -->
+src/lib/components/Hero.svelte
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 </script>
@@ -34,8 +34,8 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#acces" class="btn-primary">
-          <i class="fa-regular fa-calendar-days"></i> Prendre rendez-vous au studio
+        <a href="tel:0672901614" class="btn-primary">
+          <i class="fa-solid fa-phone"></i> Appeler pour un RDV
         </a>
         <a href="#services" class="btn-secondary">Découvrir nos tarifs</a>
       </div>
@@ -284,6 +284,14 @@
   @media (max-width: 640px) {
     .hero-actions {
       flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 14px 20px;
     }
     .info-strip {
       flex-direction: column;

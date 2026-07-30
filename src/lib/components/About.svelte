@@ -152,4 +152,11 @@
       gap: 48px;
     }
   }
+
+  @media (max-width: 640px) {
+    .about-stats-card {
+      padding: 24px;
+      gap: 20px;
+    }
+  }
 </style>

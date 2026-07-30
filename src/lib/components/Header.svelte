@@ -1,4 +1,4 @@
-<!-- src/lib/components/Header.svelte -->
+src/lib/components/Header.svelte
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 </script>
@@ -96,6 +96,20 @@
   @media (max-width: 640px) {
     .nav-links a:not(.cta-nav) {
       display: none;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .logo {
+      font-size: 1.1rem;
+    }
+    .logo i {
+      font-size: 1.25rem;
+    }
+    .cta-nav {
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      gap: 6px;
     }
   }
 </style>
