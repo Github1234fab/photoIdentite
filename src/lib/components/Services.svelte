@@ -6,6 +6,8 @@
   import enfantImg from '$lib/assets/enfant.jpg';
   import visaImg from '$lib/assets/visa_site.jpg';
   import linkedinImg from '$lib/assets/linkedin.jpg';
+   import domicile from '$lib/assets/domicile.jpg';
+
 </script>
 
 <section class="services-section" id="services">
@@ -105,12 +107,34 @@
             <p class="description">Valorisez votre image de marque. Séance de prise de vue en studio avec retouche de qualité.</p>
           </div>
           <div class="price-row">
-            <span class="price">49 €</span>
+            <span class="price">69 €</span>
             <span class="terms">1 fichier HD</span>
           </div>
         </div>
       </div>
+
+      <!-- Card 6 -->
+       <div class="service-card">
+        <div class="card-image-wrapper">
+          <img src={domicile} alt="Portrait Pro & CV" class="card-image" />
+        </div>
+        <div class="card-body-content">
+          <div>
+            <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Studio à domicile</h3>
+            <p class="subtitle">Toute photo d'identité</p>
+            <p class="description">Vous ne pouvez vous déplacer, optez pour le service à domicile. Déplacement + photo d'identité + impression sur place et remise des photos en main propre immédiatement</p>
+          </div>
+          <div class="price-row">
+            <span class="price">49 €</span>
+            <span class="terms">Idéal PMR</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    
+    
 
     <!-- Options & Conseils -->
     <div class="pricing-tips">
