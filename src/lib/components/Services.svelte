@@ -107,7 +107,7 @@
             <p class="description">Valorisez votre image de marque. Séance de prise de vue en studio avec retouche de qualité.</p>
           </div>
           <div class="price-row">
-            <span class="price">69 €</span>
+            <span class="price">89 €</span>
             <span class="terms">1 fichier HD</span>
           </div>
         </div>
