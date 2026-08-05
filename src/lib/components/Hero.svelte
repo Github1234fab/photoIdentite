@@ -282,6 +282,9 @@
   }
 
   @media (max-width: 640px) {
+    .description{
+      font-size: 14px;
+    }
     .hero-actions {
       flex-direction: column;
       gap: 12px;

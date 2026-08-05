@@ -154,6 +154,9 @@
   }
 
   @media (max-width: 640px) {
+    .highlight{
+      font-size: 16px;
+    }
     .about-stats-card {
       padding: 24px;
       gap: 20px;

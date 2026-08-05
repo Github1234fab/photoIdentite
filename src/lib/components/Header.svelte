@@ -11,9 +11,10 @@
     </a>
     
     <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#faq">Conformité</a>
+       <a href="#about">À propos</a>
+      <a href="#services">Prestations</a>
+      <a href="#faq">Réglementation</a>
+      <a href="#acces">Prendre RDV</a>
       <a href="tel:0672901614" class="cta-nav">
         <i class="fa-solid fa-phone"></i> Nous appeler
       </a>

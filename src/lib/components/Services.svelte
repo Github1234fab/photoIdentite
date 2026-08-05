@@ -97,7 +97,7 @@
       <!-- Card 5 -->
       <div class="service-card">
         <div class="card-image-wrapper">
-          <img src={linkedinImg} alt="Portrait Pro & CV" class="card-image" />
+          <img src={linkedinImg} alt="Portrait Pro & CV" class="card-image" style="height: 300px" />
         </div>
         <div class="card-body-content">
           <div>
@@ -187,19 +187,19 @@
   .service-card {
     background-color: white;
     border-radius: 20px;
-    box-shadow: var(--shadow-premium);
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 520px;
     transition: var(--transition-smooth);
-    border: 1px solid var(--border-color);
+    border: 1px solid grey;
     overflow: hidden;
   }
 
   .card-image-wrapper {
     width: 100%;
-    height: 200px;
+    max-height: 320px;
 padding: 10px;
     overflow: hidden;
     position: relative;
@@ -337,6 +337,12 @@ padding: 10px;
     .pricing-tips {
       grid-template-columns: 1fr;
       gap: 20px;
+    }
+    .service-card{
+      max-width: 320px;
+      margin: 0 auto;
+      box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+      
     }
   }
 </style>
