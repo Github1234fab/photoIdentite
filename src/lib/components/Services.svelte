@@ -31,7 +31,7 @@
             <p class="description">Prise de vue + planche de 4 photos papier + transmission numérique signature ANTS.</p>
           </div>
           <div class="price-row">
-            <span class="price">16,99 €</span>
+            <span class="price">15,90 €</span>
             <span class="terms">Prêt en 5 min</span>
           </div>
         </div>
@@ -50,7 +50,7 @@
             <p class="description">Prise de vue + planche de 6 photos papier officielles conformes aux critères mairie (Norme OACI).</p>
           </div>
           <div class="price-row">
-            <span class="price">14,99 €</span>
+            <span class="price">14,90 €</span>
             <span class="terms">Prêt en 5 min</span>
           </div>
         </div>
@@ -69,7 +69,7 @@
             <p class="description">Créneau dédié de 30 min. Prise de vue calme et patiente pour garantir la conformité.</p>
           </div>
           <div class="price-row">
-            <span class="price">19,99 €</span>
+            <span class="price">19,90 €</span>
             <span class="terms">Séance 30 min</span>
           </div>
         </div>
@@ -88,7 +88,7 @@
             <p class="description">Prise de vue et découpe spécifique aux normes des consulats étrangers.</p>
           </div>
           <div class="price-row">
-            <span class="price">16,99 €</span>
+            <span class="price">16,90 €</span>
             <span class="terms">Tous pays</span>
           </div>
         </div>
