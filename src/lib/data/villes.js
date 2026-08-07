@@ -22,7 +22,12 @@ export const villesSEO = {
 	'craponne': { slug: 'craponne', name: 'Craponne', prep: 'à', prepArticle: 'à Craponne', cp: '69290' },
 	'brignais': { slug: 'brignais', name: 'Brignais', prep: 'à', prepArticle: 'à Brignais', cp: '69530' },
 	'pollionnay': { slug: 'pollionnay', name: 'Pollionnay', prep: 'à', prepArticle: 'à Pollionnay', cp: '69290' },
-	'grezieu-la-varenne': { slug: 'grezieu-la-varenne', name: 'Grézieu-la-Varenne', prep: 'à', prepArticle: 'à Grézieu-la-Varenne', cp: '69290' }
+	'grezieu-la-varenne': { slug: 'grezieu-la-varenne', name: 'Grézieu-la-Varenne', prep: 'à', prepArticle: 'à Grézieu-la-Varenne', cp: '69290' },
+	'saint-laurent-dagny': { slug: 'saint-laurent-dagny', name: "Saint-Laurent-d'Agny", prep: 'à', prepArticle: "à Saint-Laurent-d'Agny", cp: '69440' },
+	'oullins': { slug: 'oullins', name: 'Oullins', prep: 'à', prepArticle: 'à Oullins', cp: '69600' },
+	'saint-genis-laval': { slug: 'saint-genis-laval', name: 'Saint-Genis-Laval', prep: 'à', prepArticle: 'à Saint-Genis-Laval', cp: '69230' },
+	'messimy': { slug: 'messimy', name: 'Messimy', prep: 'à', prepArticle: 'à Messimy', cp: '69510' },
+	'saint-symphorien-sur-coise': { slug: 'saint-symphorien-sur-coise', name: 'Saint-Symphorien-sur-Coise', prep: 'à', prepArticle: 'à Saint-Symphorien-sur-Coise', cp: '69590' }
 };
 
 export const mainStudioVille = villesSEO['thurins'];
