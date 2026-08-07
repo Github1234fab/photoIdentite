@@ -14,6 +14,26 @@
       <a href="#acces">Prendre RDV</a>
     </div>
 
+    <div class="links">
+      <h4>Zone d'intervention</h4>
+      <div class="villes-list">
+        <a href="/photo-carte-identite/thurins">Thurins</a>
+        <a href="/photo-carte-identite/brindas">Brindas</a>
+        <a href="/photo-carte-identite/vaugneray">Vaugneray</a>
+        <a href="/photo-carte-identite/saint-martin-en-haut">St-Martin-en-Haut</a>
+        <a href="/photo-carte-identite/soucieu-en-jarrest">Soucieu-en-Jarrest</a>
+        <a href="/photo-carte-identite/mornant">Mornant</a>
+        <a href="/photo-carte-identite/craponne">Craponne</a>
+        <a href="/photo-carte-identite/brignais">Brignais</a>
+        <a href="/photo-carte-identite/grezieu-la-varenne">Grézieu-la-Varenne</a>
+        <a href="/photo-carte-identite/saint-laurent-dagny">St-Laurent-d'Agny</a>
+        <a href="/photo-carte-identite/oullins">Oullins</a>
+        <a href="/photo-carte-identite/saint-genis-laval">St-Genis-Laval</a>
+        <a href="/photo-carte-identite/messimy">Messimy</a>
+        <a href="/photo-carte-identite/saint-symphorien-sur-coise">St-Symphorien-sur-Coise</a>
+      </div>
+    </div>
+
     <div class="legal">
       <h4>Mentions Légales</h4>
       <p>© 2026 Studio Photo Fabien Marceau. Tous droits réservés.</p>
@@ -32,9 +52,20 @@
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr 1.2fr 1fr;
     gap: 40px;
     margin-bottom: 40px;
+  }
+
+  .villes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .villes-list a {
+    font-size: 0.85rem !important;
+    white-space: nowrap;
   }
 
   .brand h3 {
@@ -84,6 +115,12 @@
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 8px;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 768px) {
