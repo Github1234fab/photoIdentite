@@ -2,7 +2,7 @@ import { villesSEO } from '$lib/data/villes.js';
 import { intentionsSEO } from '$lib/data/intentions.js';
 
 export async function GET() {
-	const domain = 'https://photo-identite-studio-thurins.fr'; // Placeholder domain to customize later
+	const domain = 'https://photo-identite-thurins.fr'; // Placeholder domain to customize later
 	
 	// Pages de base
 	const staticPages = [
