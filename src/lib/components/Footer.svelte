@@ -1,4 +1,12 @@
  <!-- src/lib/components/Footer.svelte -->
+
+<script>
+  import { villesSEO } from '$lib/data/villes.js';
+  // Trier les villes par ordre alphabétique
+  const sortedVilles = Object.values(villesSEO).sort((a, b) => a.name.localeCompare(b.name));
+</script>
+
+
 <footer class="footer">
   <div class="container footer-grid">
     <div class="brand">
@@ -8,29 +16,18 @@
     
     <div class="links">
       <h4>Navigation</h4>
-      <a href="#about">À propos</a>
-      <a href="#services">Prestations</a>
-      <a href="#faq">Réglementation</a>
-      <a href="#acces">Prendre RDV</a>
+      <a href="/#about">À propos</a>
+      <a href="/#services">Prestations</a>
+      <a href="/#faq">Réglementation</a>
+      <a href="/#acces">Prendre RDV</a>
     </div>
 
     <div class="links">
       <h4>Zone d'intervention</h4>
       <div class="villes-list">
-        <a href="/photo-carte-identite/thurins">Thurins</a>
-        <a href="/photo-carte-identite/brindas">Brindas</a>
-        <a href="/photo-carte-identite/vaugneray">Vaugneray</a>
-        <a href="/photo-carte-identite/saint-martin-en-haut">St-Martin-en-Haut</a>
-        <a href="/photo-carte-identite/soucieu-en-jarrest">Soucieu-en-Jarrest</a>
-        <a href="/photo-carte-identite/mornant">Mornant</a>
-        <a href="/photo-carte-identite/craponne">Craponne</a>
-        <a href="/photo-carte-identite/brignais">Brignais</a>
-        <a href="/photo-carte-identite/grezieu-la-varenne">Grézieu-la-Varenne</a>
-        <a href="/photo-carte-identite/saint-laurent-dagny">St-Laurent-d'Agny</a>
-        <a href="/photo-carte-identite/oullins">Oullins</a>
-        <a href="/photo-carte-identite/saint-genis-laval">St-Genis-Laval</a>
-        <a href="/photo-carte-identite/messimy">Messimy</a>
-        <a href="/photo-carte-identite/saint-symphorien-sur-coise">St-Symphorien-sur-Coise</a>
+         {#each sortedVilles as ville}
+          <a href="/photo-carte-identite/{ville.slug}">{ville.name}</a>
+         {/each}
       </div>
     </div>
 

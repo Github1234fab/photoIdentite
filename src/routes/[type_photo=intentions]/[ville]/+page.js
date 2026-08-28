@@ -3,6 +3,20 @@ import { error } from '@sveltejs/kit';
 import { villesSEO } from '$lib/data/villes.js';
 import { intentionsSEO } from '$lib/data/intentions.js';
 
+export const prerender = true;
+
+// Donne à SvelteKit la liste de toutes les combinaisons intentions x villes à pré-générer
+export function entries() {
+	const intentions = Object.keys(intentionsSEO);
+	const list = [];
+	for (const type_photo of intentions) {
+		for (const ville of Object.keys(villesSEO)) {
+			list.push({ type_photo, ville });
+		}
+	}
+	return list;
+}
+
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
 	const slugVille = params.ville ? params.ville.toLowerCase() : '';
