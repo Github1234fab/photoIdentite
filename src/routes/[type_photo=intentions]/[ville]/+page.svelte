@@ -1,11 +1,13 @@
-<!-- src/routes/[type_photo=intentions]/[ville]/+page.svelte -->
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
   import Hero from '$lib/components/Hero.svelte';
+  import LocalDetails from '$lib/components/LocalDetails.svelte';
   import About from '$lib/components/About.svelte';
   import Services from '$lib/components/Services.svelte';
   import Faq from '$lib/components/Faq.svelte';
   import Access from '$lib/components/Access.svelte';
+  import IdidemBanner from '$lib/components/IdidemBanner.svelte';
+  import LocalHub from '$lib/components/LocalHub.svelte';
 
   let { data } = $props();
 
@@ -22,7 +24,10 @@
 </svelte:head>
 
 <Hero />
+<LocalDetails />
 <About />
 <Services />
+<IdidemBanner />
+<LocalHub />
 <Faq />
 <Access />

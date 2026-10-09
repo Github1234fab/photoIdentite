@@ -2,41 +2,44 @@ import { villesSEO } from '$lib/data/villes.js';
 import { intentionsSEO } from '$lib/data/intentions.js';
 
 export async function GET() {
-	const domain = 'https://photo-identite-thurins.fr'; // Placeholder domain to customize later
+	const domain = 'https://photo-identite-thurins.fr';
 	
-	// Pages de base
-	const staticPages = [
-		''
-	];
-
-	// Intentions & Villes
 	const intentions = Object.keys(intentionsSEO);
-	const cities = Object.keys(villesSEO);
+	// Filtrer uniquement les 10 communes prioritaires
+	const priorityCities = Object.keys(villesSEO).filter(slug => villesSEO[slug].isPriority);
 
 	const today = new Date().toISOString().split('T')[0];
-	const urls = [];
+	const items = [];
 
-	// 1. Pages statiques
-	for (const page of staticPages) {
-		urls.push(`${domain}${page}`);
-	}
+	// 1. Page d'accueil principale (Priorité 1.0)
+	items.push({
+		url: domain,
+		priority: '1.0',
+		changefreq: 'daily'
+	});
 
-	// 2. Pages d'intention x villes
+	// 2. Pages d'intentions x 10 Villes prioritaires (Priorité 0.9 pour Thurins studio, 0.8 pour les 9 communes proches)
 	for (const intention of intentions) {
-		for (const city of cities) {
-			urls.push(`${domain}/${intention}/${city}`);
+		for (const citySlug of priorityCities) {
+			const ville = villesSEO[citySlug];
+			const isStudioLoc = ville.isMainStudio;
+			items.push({
+				url: `${domain}/${intention}/${citySlug}`,
+				priority: isStudioLoc ? '0.9' : '0.8',
+				changefreq: 'weekly'
+			});
 		}
 	}
 
-	// Générer l'XML propre sans retours à la ligne au début
+	// Générer le XML propre
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	${urls.map(url => `
+	${items.map(item => `
 	<url>
-		<loc>${url}</loc>
+		<loc>${item.url}</loc>
 		<lastmod>${today}</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>${url === domain ? '1.0' : '0.8'}</priority>
+		<changefreq>${item.changefreq}</changefreq>
+		<priority>${item.priority}</priority>
 	</url>`).join('')}
 </urlset>`.trim();
 

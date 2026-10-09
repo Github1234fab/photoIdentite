@@ -1,4 +1,3 @@
-<!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
@@ -7,6 +6,8 @@
   import Services from '$lib/components/Services.svelte';
   import Faq from '$lib/components/Faq.svelte';
   import Access from '$lib/components/Access.svelte';
+  import IdidemBanner from '$lib/components/IdidemBanner.svelte';
+  import LocalHub from '$lib/components/LocalHub.svelte';
 
   onMount(() => {
     seoStore.city = null;
@@ -22,5 +23,7 @@
 <Hero />
 <About />
 <Services />
+<IdidemBanner />
+<LocalHub />
 <Faq />
 <Access />
