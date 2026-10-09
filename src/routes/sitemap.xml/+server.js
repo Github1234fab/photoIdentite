@@ -1,10 +1,8 @@
 import { villesSEO } from '$lib/data/villes.js';
-import { intentionsSEO } from '$lib/data/intentions.js';
 
 export async function GET() {
 	const domain = 'https://photo-identite-thurins.fr';
 	
-	const intentions = Object.keys(intentionsSEO);
 	// Filtrer uniquement les 10 communes prioritaires
 	const priorityCities = Object.keys(villesSEO).filter(slug => villesSEO[slug].isPriority);
 
@@ -18,17 +16,15 @@ export async function GET() {
 		changefreq: 'daily'
 	});
 
-	// 2. Pages d'intentions x 10 Villes prioritaires (Priorité 0.9 pour Thurins studio, 0.8 pour les 9 communes proches)
-	for (const intention of intentions) {
-		for (const citySlug of priorityCities) {
-			const ville = villesSEO[citySlug];
-			const isStudioLoc = ville.isMainStudio;
-			items.push({
-				url: `${domain}/${intention}/${citySlug}`,
-				priority: isStudioLoc ? '0.9' : '0.8',
-				changefreq: 'weekly'
-			});
-		}
+	// 2. Exactement 1 URL par commune prioritaire (photo-carte-identite) -> 10 URLs
+	for (const citySlug of priorityCities) {
+		const ville = villesSEO[citySlug];
+		const isStudioLoc = ville.isMainStudio;
+		items.push({
+			url: `${domain}/photo-carte-identite/${citySlug}`,
+			priority: isStudioLoc ? '0.9' : '0.8',
+			changefreq: 'weekly'
+		});
 	}
 
 	// Générer le XML propre

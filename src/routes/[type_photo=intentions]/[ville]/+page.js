@@ -5,12 +5,13 @@ import { intentionsSEO } from '$lib/data/intentions.js';
 
 export const prerender = true;
 
-// Donne à SvelteKit la liste de toutes les combinaisons intentions x villes à pré-générer
+// Donne à SvelteKit la liste des combinaisons des 10 communes prioritaires à pré-générer
 export function entries() {
 	const intentions = Object.keys(intentionsSEO);
+	const priorityCities = Object.keys(villesSEO).filter(slug => villesSEO[slug].isPriority);
 	const list = [];
 	for (const type_photo of intentions) {
-		for (const ville of Object.keys(villesSEO)) {
+		for (const ville of priorityCities) {
 			list.push({ type_photo, ville });
 		}
 	}
