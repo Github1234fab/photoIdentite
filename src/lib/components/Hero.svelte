@@ -1,4 +1,3 @@
-<!-- src/lib/components/Hero.svelte -->
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 </script>
@@ -57,18 +56,33 @@
     </div>
     
     <div class="hero-image-wrapper">
-      <div class="card-studio glass">
-        <div class="card-header-icon">
-          <i class="fa-solid fa-house-chimney-user"></i>
+      <div class="hero-card-container">
+        <div class="hero-image-frame">
+          <img 
+            src="/planche_HeroBanner.jpeg" 
+            alt="Planche d'identité officielle ANTS et Passeport - Studio Fabien Marceau à Thurins" 
+            class="hero-img"
+            loading="eager"
+          />
+          <div class="status-indicator-badge">
+            <span class="dot"></span> Ouvert aux réservations
+          </div>
         </div>
-        <h3>Studio Photo Fabien Marceau</h3>
-        <p>Thurins (69510) — Monts du Lyonnais</p>
-        <span class="status-indicator">
-          <span class="dot"></span> Ouvert aux réservations
-        </span>
-        <div class="address-box">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Service ultra-local pour {seoStore.city ? seoStore.city.name : 'Thurins'} et communes voisines.</span>
+
+        <div class="studio-floating-tag glass">
+          <div class="tag-header">
+            <div class="tag-icon">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <div>
+              <h3>Studio Photo Fabien Marceau</h3>
+              <p>Thurins (69510) — Monts du Lyonnais</p>
+            </div>
+          </div>
+          <div class="address-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Service ultra-local pour {seoStore.city ? seoStore.city.name : 'Thurins'} et communes voisines.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -195,68 +209,113 @@
     justify-content: center;
   }
 
-  .card-studio {
+  .hero-card-container {
     width: 100%;
-    max-width: 360px;
-    padding: 32px;
-    border-radius: 24px;
-    box-shadow: var(--shadow-premium);
-    text-align: center;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     position: relative;
-    border: 1.5px solid rgba(197, 168, 128, 0.2);
   }
 
-  .card-header-icon {
-    width: 64px;
-    height: 64px;
+  .hero-image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium, 0 20px 40px rgba(0, 0, 0, 0.12));
+    border: 1.5px solid rgba(197, 168, 128, 0.3);
     background-color: var(--primary-color);
-    color: var(--accent-color);
-    border-radius: 50px;
+    aspect-ratio: 16 / 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 20px auto;
   }
 
-  .card-studio h3 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.18);
+    transition: transform 0.5s ease;
   }
 
-  .card-studio p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 20px;
+  .hero-image-frame:hover .hero-img {
+    transform: scale(1.24);
   }
 
-  .status-indicator {
+  .status-indicator-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--success-color);
-    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color, #10b981);
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
     padding: 6px 14px;
     border-radius: 50px;
-    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .status-indicator .dot {
+  .status-indicator-badge .dot {
     width: 8px;
     height: 8px;
-    background-color: var(--success-color);
+    background-color: var(--success-color, #10b981);
     border-radius: 50px;
-    box-shadow: 0 0 10px var(--success-color);
+    box-shadow: 0 0 10px var(--success-color, #10b981);
+  }
+
+  .studio-floating-tag {
+    padding: 20px 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid rgba(197, 168, 128, 0.25);
+    background: white;
+  }
+
+  .tag-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .tag-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .studio-floating-tag h3 {
+    font-size: 1.15rem;
+    margin: 0 0 2px 0;
+    color: var(--primary-color);
+  }
+
+  .studio-floating-tag p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
   }
 
   .address-box {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     text-align: left;
     background-color: rgba(15, 23, 42, 0.03);
-    padding: 16px;
+    padding: 12px 14px;
     border-radius: 12px;
     font-size: 0.85rem;
     line-height: 1.4;
@@ -264,7 +323,7 @@
 
   .address-box i {
     color: var(--accent-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 2px;
   }
 

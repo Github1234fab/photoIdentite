@@ -1,4 +1,3 @@
-<!-- src/lib/components/IdidemBanner.svelte -->
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 </script>
@@ -7,15 +6,25 @@
   <div class="container">
     <div class="ididem-card">
       <div class="ididem-content">
-        <div class="ididem-badge">
-          <i class="fa-solid fa-laptop"></i> Service en Ligne Partenaire & Agrée
+        <div class="badges-row">
+          <div class="ididem-badge">
+            <i class="fa-solid fa-laptop"></i> Service en Ligne Partenaire & Agréé
+          </div>
+          <div class="french-badge">
+            <span class="flag-fr" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span>Application 100% Française</span>
+          </div>
         </div>
+
         <h2>Impossible de vous déplacer au studio {#if seoStore.city}{seoStore.city.prepArticle}{:else}à Thurins{/if} ?</h2>
         <p>
           Découvrez notre plateforme partenaire <a href="https://ididem.com" target="_blank" rel="noopener" class="inline-link"><strong>IDidem.com</strong></a> pour réaliser votre 
           <a href="https://ididem.com/e-photo-ants-en-ligne/lyon" target="_blank" rel="noopener" class="inline-link">e-photo ANTS en ligne</a> ou votre 
           <a href="https://ididem.com/photo-identite-en-ligne/lyon" target="_blank" rel="noopener" class="inline-link">photo d'identité officielle en ligne</a> avec validation conforme par un photographe qualifié.
         </p>
+
         <div class="ididem-features">
           <div class="feature-item">
             <i class="fa-solid fa-shield-halved"></i>
@@ -29,13 +38,28 @@
             <i class="fa-solid fa-envelope"></i>
             <span>Recevez vos e-photos & code par e-mail</span>
           </div>
+          <div class="feature-item highlight-feature">
+            <i class="fa-solid fa-headset"></i>
+            <span>SAV & expertise de proximité</span>
+          </div>
         </div>
       </div>
+
       <div class="ididem-cta">
         <a href="https://ididem.com" target="_blank" rel="noopener" class="btn-ididem">
           Commandez sur IDidem.com <i class="fa-solid fa-arrow-right"></i>
         </a>
         <span class="sub-text">100% Conforme aux exigences OACI / ANTS</span>
+
+        <div class="reassurance-pill">
+          <span class="flag-fr" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <div class="reassurance-text">
+            <strong>Application 100% Française</strong>
+            <small>SAV et expertise de proximité</small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,6 +85,14 @@
     backdrop-filter: blur(10px);
   }
 
+  .badges-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
   .ididem-badge {
     display: inline-flex;
     align-items: center;
@@ -71,7 +103,44 @@
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 16px;
+  }
+
+  .french-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .flag-fr {
+    display: inline-flex;
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+  }
+
+  .flag-fr span:nth-child(1) {
+    width: 33.33%;
+    background: #002654;
+  }
+
+  .flag-fr span:nth-child(2) {
+    width: 33.33%;
+    background: #ffffff;
+  }
+
+  .flag-fr span:nth-child(3) {
+    width: 33.34%;
+    background: #ed2939;
   }
 
   .ididem-content {
@@ -121,11 +190,22 @@
     color: #c5a880;
   }
 
+  .highlight-feature {
+    background: rgba(197, 168, 128, 0.12);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(197, 168, 128, 0.25);
+  }
+
+  .highlight-feature i {
+    color: #ffd89b;
+  }
+
   .ididem-cta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     white-space: nowrap;
   }
 
@@ -139,14 +219,17 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    text-decoration: none;
   }
 
   .btn-ididem:hover {
-    background-color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3);
+    background-color: #d8bc93;
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
   }
 
   .sub-text {
@@ -154,11 +237,44 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
+  .reassurance-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 8px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .reassurance-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  .reassurance-text strong {
+    font-size: 0.8rem;
+    color: #ffffff;
+  }
+
+  .reassurance-text small {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
   @media (max-width: 992px) {
     .ididem-card {
       flex-direction: column;
       text-align: center;
       padding: 30px 24px;
+    }
+
+    .badges-row {
+      justify-content: center;
     }
 
     .ididem-content {
@@ -176,6 +292,11 @@
     .btn-ididem {
       width: 100%;
       justify-content: center;
+    }
+
+    .reassurance-pill {
+      justify-content: center;
+      text-align: center;
     }
   }
 </style>
