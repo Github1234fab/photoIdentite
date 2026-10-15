@@ -69,7 +69,7 @@
             <p class="description">Créneau dédié de 30 min. Prise de vue calme et patiente pour garantir la conformité.</p>
           </div>
           <div class="price-row">
-            <span class="price">20 €</span>
+            <span class="price">19 €</span>
             <span class="terms">Séance 30 min</span>
           </div>
         </div>
