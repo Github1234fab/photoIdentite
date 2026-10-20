@@ -21,13 +21,14 @@
 <svelte:head>
   <title>{data.seo.title}</title>
   <meta name="description" content={data.seo.description} />
+  <link rel="canonical" href={data.seo.canonical} />
 </svelte:head>
 
-<Hero />
-<LocalDetails />
+<Hero city={data.ville} intention={data.intention} />
+<LocalDetails city={data.ville} intention={data.intention} />
 <About />
 <Services />
 <IdidemBanner />
-<LocalHub />
+<LocalHub city={data.ville} intention={data.intention} />
 <Faq />
 <Access />

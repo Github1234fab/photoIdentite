@@ -35,10 +35,30 @@ export function load({ params }) {
 		throw error(404, 'Prestation de photo d\'identité non supportée');
 	}
 
-	// Générer les balises SEO ciblées
+	const domain = 'https://photo-identite-thurins.fr';
+	const isMainStudio = Boolean(villeInfo.isMainStudio);
+	const canonical = `${domain}/photo-carte-identite/${slugVille}`;
+
+	let title;
+	let description;
+
+	if (typePhoto === 'photo-carte-identite') {
+		title = isMainStudio
+			? `Photo d'identité & E-photo ANTS à Thurins — Studio Photo Fabien Marceau`
+			: `Photo d'identité & E-photo ANTS ${villeInfo.prepArticle} — Studio Thurins`;
+
+		description = isMainStudio
+			? `Photos d'identité officielles et e-photos ANTS (permis, passeport, CNI) au studio photo de Thurins (69510). Prise de vue professionnelle garantie 100% conforme en 5 minutes.`
+			: `Photos d'identité et e-photos ANTS officielles conformes pour permis de conduire, passeport et carte d'identité. Studio à Thurins, à quelques minutes ${villeInfo.prep === 'à' ? 'de ' + villeInfo.name : 'd\'' + villeInfo.name}.`;
+	} else {
+		title = `${intentionInfo.name} ${villeInfo.prepArticle} (${villeInfo.cp}) — Studio Thurins`;
+		description = `${intentionInfo.description} Réalisez vos photos officielles au studio photo de Thurins, à quelques minutes de ${villeInfo.name}.`;
+	}
+
 	const seo = {
-		title: `${intentionInfo.name} ${villeInfo.prepArticle} (${villeInfo.cp}) - Conforme à 100%`,
-		description: `${intentionInfo.description} Réalisez vos photos officielles au studio photo de Thurins, à quelques minutes de ${villeInfo.name}.`
+		title,
+		description,
+		canonical
 	};
 
 	return {

@@ -1,5 +1,10 @@
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
+
+  let { city = null, intention = null } = $props();
+
+  let activeCity = $derived(city ?? seoStore.city);
+  let activeIntention = $derived(intention ?? seoStore.intention);
 </script>
 
 <section class="hero-section">
@@ -10,14 +15,18 @@
       </span>
       
       <h1>
-        {#if seoStore.intention}
-          {seoStore.intention.name}
+        {#if activeIntention}
+          {activeIntention.name}
         {:else}
           Photos d'identité officielles
         {/if}
         <span>
-          {#if seoStore.city}
-            {seoStore.city.prepArticle}
+          {#if activeCity}
+            {#if !activeCity.isMainStudio}
+              {activeCity.prepArticle} — Studio Thurins
+            {:else}
+              {activeCity.prepArticle}
+            {/if}
           {:else}
             à Thurins
           {/if}
@@ -25,8 +34,8 @@
       </h1>
       
       <p class="description">
-        {#if seoStore.intention}
-          {seoStore.intention.description}
+        {#if activeIntention}
+          {activeIntention.description}
         {:else}
           Vos e-photos ANTS et photos d'identité conformes pour passeport, carte d'identité (CNI), permis ou visa. Prise de vue professionnelle au studio à Thurins.
         {/if}
@@ -81,7 +90,7 @@
           </div>
           <div class="address-box">
             <i class="fa-solid fa-location-dot"></i>
-            <span>Service ultra-local pour {seoStore.city ? seoStore.city.name : 'Thurins'} et communes voisines.</span>
+            <span>Service ultra-local pour {activeCity ? activeCity.name : 'Thurins'} et communes voisines.</span>
           </div>
         </div>
       </div>
@@ -124,8 +133,8 @@
   }
 
   .hero-content h1 {
-    font-size: 3.8rem;
-    line-height: 1.1;
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    line-height: 1.15;
     margin-bottom: 20px;
   }
 
@@ -341,6 +350,9 @@
   }
 
   @media (max-width: 640px) {
+    .hero-content h1 {
+      font-size: 2.1rem;
+    }
     .description{
       font-size: 14px;
     }

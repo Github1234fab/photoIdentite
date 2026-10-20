@@ -2,8 +2,10 @@
 <script>
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 
-  let city = $derived(seoStore.city);
-  let intention = $derived(seoStore.intention);
+  let { city: propCity = null, intention: propIntention = null } = $props();
+
+  let city = $derived(propCity ?? seoStore.city);
+  let intention = $derived(propIntention ?? seoStore.intention);
 </script>
 
 {#if city}

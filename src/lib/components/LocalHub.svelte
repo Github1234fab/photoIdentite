@@ -3,12 +3,17 @@
   import { villesSEO } from '$lib/data/villes.js';
   import { seoStore } from '$lib/stores/seoStore.svelte.js';
 
+  let { city: propCity = null, intention: propIntention = null } = $props();
+
+  const activeCity = $derived(propCity ?? seoStore.city);
+  const activeIntention = $derived(propIntention ?? seoStore.intention);
+
   // Récupérer les 10 villes prioritaires
   const priorityVilles = Object.values(villesSEO).filter(v => v.isPriority);
   
   // Intention courante ou par défaut
-  const currentIntentionSlug = $derived(seoStore.intention ? seoStore.intention.slug : 'photo-carte-identite');
-  const currentIntentionName = $derived(seoStore.intention ? seoStore.intention.name : 'Photo d\'identité');
+  const currentIntentionSlug = $derived(activeIntention ? activeIntention.slug : 'photo-carte-identite');
+  const currentIntentionName = $derived(activeIntention ? activeIntention.name : 'Photo d\'identité');
 </script>
 
 <section class="local-hub-section">
@@ -27,7 +32,7 @@
       {#each priorityVilles as ville}
         <a 
           href="/{currentIntentionSlug}/{ville.slug}" 
-          class="priority-card {seoStore.city?.slug === ville.slug ? 'active-city' : ''}"
+          class="priority-card {activeCity?.slug === ville.slug ? 'active-city' : ''}"
         >
           <div class="city-info">
             <div class="city-head">

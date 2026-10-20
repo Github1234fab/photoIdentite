@@ -24,9 +24,9 @@ export const intentionsSEO = {
 	},
 	'photo-carte-identite': {
 		slug: 'photo-carte-identite',
-		name: 'Photo de carte nationale d\'identité',
-		keyword: 'photo carte d\'identité',
-		description: 'Photos officielles pour votre dossier de carte nationale d\'identité (CNI), validées pour acceptation en mairie.'
+		name: 'Photo d\'identité & E-photo ANTS',
+		keyword: 'photo d\'identité e-photo ANTS',
+		description: 'Photos d\'identité officielles et e-photos ANTS conformes pour carte d\'identité, passeport et permis de conduire, avec validation garantie en mairie.'
 	},
 	'photo-permis-de-conduire': {
 		slug: 'photo-permis-de-conduire',

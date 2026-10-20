@@ -11,12 +11,14 @@
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
+			"@type": ["LocalBusiness", "Photographer"],
 			"name": "Studio Photo Fabien Marceau",
 			"image": "https://gist.githubusercontent.com/Github1234fab/f41bd73e7b57d72e196c1b576654b37e/raw/logoIdidem_1024.png",
-			"@id": "https://photo-identite.studio",
-			"url": "https://photo-identite.studio",
+			"@id": "https://photo-identite-thurins.fr/#photographer",
+			"url": "https://photo-identite-thurins.fr",
 			"telephone": "+33672901614",
+			"email": "id.domicile@gmail.com",
+			"priceRange": "€€",
 			"address": {
 				"@type": "PostalAddress",
 				"streetAddress": "69510 Thurins",
@@ -51,7 +53,9 @@
 					"closes": "13:00"
 				}
 			],
-			"sameAs": []
+			"sameAs": [
+				"https://ididem.com"
+			]
 		}
 	</script>
 </svelte:head>

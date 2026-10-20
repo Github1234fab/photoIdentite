@@ -18,6 +18,7 @@
 <svelte:head>
   <title>Photo d'identité Thurins - Studio Photo Fabien Marceau (69)</title>
   <meta name="description" content="Photos d'identité professionnelles et conformes garanties à 100% à Thurins (69510). e-Photo ANTS permis, passeport, carte d'identité, visas." />
+  <link rel="canonical" href="https://photo-identite-thurins.fr" />
 </svelte:head>
 
 <Hero />
