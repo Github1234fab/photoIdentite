@@ -3,14 +3,14 @@
 :root {
   --primary-color: #0f172a; /* Slate 900 */
   --primary-light: #1e293b; /* Slate 800 */
-  --accent-color: #c5a880; /* Champagne Gold */
-  --accent-hover: #b3946a; /* Darker Champagne */
-  --bg-main: #f8fafc; /* Slate 50 */
+  --accent-color: #a87948; /* Café Noisette / Caramel chaleureux */
+  --accent-hover: #936638; /* Noisette soutenu */
+  --bg-main: #eee4d7; /* Café-Crème doux et chaleureux */
   --bg-card: #ffffff;
   --text-main: #334155; /* Slate 700 */
   --text-dark: #0f172a; /* Slate 900 */
   --text-light: #64748b; /* Slate 500 */
-  --border-color: #e2e8f0; /* Slate 200 */
+  --border-color: #dcc8b2; /* Bordure café au lait douce */
   --success-color: #10b981; /* Emerald 500 */
   
   --font-heading: 'Outfit', 'Inter', sans-serif;

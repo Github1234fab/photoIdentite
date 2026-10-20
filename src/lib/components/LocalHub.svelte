@@ -65,8 +65,8 @@
 <style>
   .local-hub-section {
     padding: 80px 0;
-    background-color: var(--bg-main, #f8fafc);
-    border-top: 1px solid var(--border-color, #e2e8f0);
+    background-color: var(--bg-main, #eee4d7);
+    border-top: 1px solid var(--border-color, #dcc8b2);
   }
 
   .section-header {

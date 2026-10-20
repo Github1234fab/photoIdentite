@@ -102,7 +102,10 @@
   .hero-section {
     position: relative;
     padding: 160px 0 100px 0;
-    background: radial-gradient(circle at 10% 20%, rgba(197, 168, 128, 0.08) 0%, rgba(15, 23, 42, 0.02) 90%);
+    background: 
+      radial-gradient(ellipse at 85% 25%, rgba(186, 142, 98, 0.28) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 20%, rgba(255, 251, 245, 0.95) 0%, transparent 60%),
+      linear-gradient(180deg, #f8f1e7 0%, #e8dbcc 100%);
     overflow: hidden;
   }
 
@@ -232,7 +235,6 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-premium, 0 20px 40px rgba(0, 0, 0, 0.12));
-    border: 1.5px solid rgba(197, 168, 128, 0.3);
     background-color: var(--primary-color);
     aspect-ratio: 16 / 10;
     display: flex;
@@ -246,12 +248,12 @@
     display: block;
     object-fit: cover;
     object-position: center;
-    transform: scale(1.18);
+    transform: scale(1.32);
     transition: transform 0.5s ease;
   }
 
   .hero-image-frame:hover .hero-img {
-    transform: scale(1.24);
+    transform: scale(1.38);
   }
 
   .status-indicator-badge {
@@ -261,22 +263,36 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--success-color, #10b981);
-    background-color: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(8px);
-    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45);
+    padding: 7px 15px;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.01em;
+    z-index: 2;
   }
 
   .status-indicator-badge .dot {
     width: 8px;
     height: 8px;
-    background-color: var(--success-color, #10b981);
-    border-radius: 50px;
-    box-shadow: 0 0 10px var(--success-color, #10b981);
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ffffff;
+    animation: pulse-dot 1.8s infinite ease-in-out;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.45;
+      transform: scale(0.8);
+    }
   }
 
   .studio-floating-tag {

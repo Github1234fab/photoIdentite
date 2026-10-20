@@ -122,8 +122,8 @@
   .local-details-section {
     padding: 70px 0;
     background-color: #ffffff;
-    border-top: 1px solid var(--border-color, #e2e8f0);
-    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    border-top: 1px solid var(--border-color, #dcc8b2);
+    border-bottom: 1px solid var(--border-color, #dcc8b2);
   }
 
   .local-grid {
@@ -133,8 +133,8 @@
   }
 
   .local-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: var(--bg-main, #eee4d7);
+    border: 1px solid var(--border-color, #dcc8b2);
     border-radius: 20px;
     padding: 32px 28px;
     display: flex;
