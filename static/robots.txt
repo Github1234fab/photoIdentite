@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://studio-photo-thurins.fr/sitemap.xml
+Sitemap: https://photo-identite-thurins.fr/sitemap.xml

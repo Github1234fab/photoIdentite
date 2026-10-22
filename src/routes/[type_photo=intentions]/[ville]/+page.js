@@ -1,27 +1,29 @@
 // src/routes/[type_photo=intentions]/[ville]/+page.js
-import { error } from '@sveltejs/kit';
-import { villesSEO } from '$lib/data/villes.js';
+import { error, redirect } from '@sveltejs/kit';
+import { villesSEO, getRedirectTarget } from '$lib/data/villes.js';
 import { intentionsSEO } from '$lib/data/intentions.js';
 
 export const prerender = true;
 
-// Donne à SvelteKit la liste des combinaisons des 10 communes prioritaires à pré-générer
+// Donne à SvelteKit la liste des 10 communes prioritaires officielles à pré-générer
 export function entries() {
-	const intentions = Object.keys(intentionsSEO);
 	const priorityCities = Object.keys(villesSEO).filter(slug => villesSEO[slug].isPriority);
-	const list = [];
-	for (const type_photo of intentions) {
-		for (const ville of priorityCities) {
-			list.push({ type_photo, ville });
-		}
-	}
-	return list;
+	return priorityCities.map(ville => ({
+		type_photo: 'photo-carte-identite',
+		ville
+	}));
 }
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
 	const slugVille = params.ville ? params.ville.toLowerCase() : '';
 	const typePhoto = params.type_photo;
+
+	// Redirection 301 propre pour toutes les anciennes URLs indexées (ou doublons)
+	const redirectUrl = getRedirectTarget(typePhoto, slugVille);
+	if (redirectUrl) {
+		redirect(301, redirectUrl);
+	}
 
 	// Récupérer la configuration de la ville
 	const villeInfo = villesSEO[slugVille];

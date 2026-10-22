@@ -31,7 +31,7 @@
     <div class="priority-grid">
       {#each priorityVilles as ville}
         <a 
-          href="/{currentIntentionSlug}/{ville.slug}" 
+          href="/photo-carte-identite/{ville.slug}" 
           class="priority-card {activeCity?.slug === ville.slug ? 'active-city' : ''}"
         >
           <div class="city-info">

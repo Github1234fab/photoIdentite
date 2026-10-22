@@ -254,3 +254,81 @@ export const villesSEO = {
 };
 
 export const mainStudioVille = villesSEO['thurins'];
+
+/**
+ * Table de correspondance vers la commune prioritaire la plus proche géographiquement.
+ * Utilisée pour les redirections 301 des communes secondaires afin de consolider le SEO local.
+ * @type {Record<string, string>}
+ */
+export const nearestPriorityCityMap = {
+	// Proches Thurins (Studio principal)
+	'rontalon': 'thurins',
+	'yzeron': 'thurins',
+
+	// Proches Mornant
+	'beauvallon': 'mornant',
+	'chaussan': 'mornant',
+	'saint-laurent-dagny': 'mornant',
+	'saint-sorlin': 'mornant',
+
+	// Proches Soucieu-en-Jarrest
+	'orlienas': 'soucieu-en-jarrest',
+	'taluyers': 'soucieu-en-jarrest',
+
+	// Proches Brignais
+	'charly': 'brignais',
+	'grigny': 'brignais',
+	'irigny': 'brignais',
+	'montagny': 'brignais',
+	'oullins': 'brignais',
+	'pierre-benite': 'brignais',
+	'saint-genis-laval': 'brignais',
+	'vourles': 'brignais',
+
+	// Proches Vaugneray
+	'bessenay': 'vaugneray',
+	'chevinay': 'vaugneray',
+	'courzieu': 'vaugneray',
+	'pollionnay': 'vaugneray',
+
+	// Proches Craponne
+	'francheville': 'craponne',
+	'grezieu-la-varenne': 'craponne',
+	'marcy-letoile': 'craponne',
+	'sainte-consorce': 'craponne',
+	'sainte-foy-les-lyon': 'craponne',
+
+	// Proches Saint-Martin-en-Haut
+	'aveize': 'saint-martin-en-haut',
+	'duerne': 'saint-martin-en-haut',
+	'la-chapelle-sur-coise': 'saint-martin-en-haut',
+	'saint-symphorien-sur-coise': 'saint-martin-en-haut'
+};
+
+/**
+ * Calcule la cible de redirection 301 pour une URL [type_photo]/[ville].
+ * Retourne null si l'URL est canonique et doit renvoyer 200 OK.
+ * @param {string} typePhoto 
+ * @param {string} slugVille 
+ * @returns {string | null}
+ */
+export function getRedirectTarget(typePhoto, slugVille) {
+	if (!slugVille) return null;
+	const normalizedSlug = slugVille.toLowerCase();
+	const ville = villesSEO[normalizedSlug];
+	if (!ville) return null;
+
+	// Si c'est déjà l'URL officielle de la ville prioritaire (carte d'identité), conserver en 200 OK
+	if (ville.isPriority && typePhoto === 'photo-carte-identite') {
+		return null;
+	}
+
+	// Si c'est une ville prioritaire mais avec une autre intention, rediriger vers sa page officielle
+	if (ville.isPriority) {
+		return `/photo-carte-identite/${normalizedSlug}`;
+	}
+
+	// Si c'est une ville secondaire, rediriger vers la commune prioritaire la plus proche
+	const nearestSlug = nearestPriorityCityMap[normalizedSlug] || 'thurins';
+	return `/photo-carte-identite/${nearestSlug}`;
+}
