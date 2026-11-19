@@ -30,9 +30,14 @@
             <p class="subtitle">Permis & Titre de séjour</p>
             <p class="description">Prise de vue + planche de 4 photos papier + transmission numérique signature ANTS.</p>
           </div>
-          <div class="price-row">
-            <span class="price">16 €</span>
-            <span class="terms">Prêt en 5 min</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">16 €</span>
+              <span class="terms">Prêt en 5 min</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -49,9 +54,14 @@
             <p class="subtitle">Passeport, CNI, Carte Vitale</p>
             <p class="description">Prise de vue + planche de 6 photos papier officielles conformes aux critères mairie (Norme OACI).</p>
           </div>
-          <div class="price-row">
-            <span class="price">15 €</span>
-            <span class="terms">Prêt en 5 min</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">15 €</span>
+              <span class="terms">Prêt en 5 min</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -68,9 +78,14 @@
             <p class="subtitle">Moins de 5 ans</p>
             <p class="description">Créneau dédié de 30 min. Prise de vue calme et patiente pour garantir la conformité.</p>
           </div>
-          <div class="price-row">
-            <span class="price">19 €</span>
-            <span class="terms">Séance 30 min</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">19 €</span>
+              <span class="terms">Séance 30 min</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -87,9 +102,14 @@
             <p class="subtitle">USA, Inde, Chine, Canada...</p>
             <p class="description">Prise de vue et découpe spécifique aux normes des consulats étrangers.</p>
           </div>
-          <div class="price-row">
-            <span class="price">17 €</span>
-            <span class="terms">Tous pays</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">17 €</span>
+              <span class="terms">Tous pays</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -106,9 +126,14 @@
             <p class="subtitle">Profil LinkedIn & CV</p>
             <p class="description">Valorisez votre image de marque. Séance de prise de vue en studio avec retouche de qualité.</p>
           </div>
-          <div class="price-row">
-            <span class="price">89 €</span>
-            <span class="terms">1 fichier HD</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">89 €</span>
+              <span class="terms">1 fichier HD</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -116,18 +141,23 @@
       <!-- Card 6 -->
        <div class="service-card">
         <div class="card-image-wrapper">
-          <img src={domicile} alt="Portrait Pro & CV" class="card-image" />
+          <img src={domicile} alt="Studio à domicile" class="card-image" />
         </div>
         <div class="card-body-content">
           <div>
-            <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-house"></i></div>
             <h3>Studio à domicile</h3>
             <p class="subtitle">Toute photo d'identité</p>
             <p class="description">Vous ne pouvez vous déplacer, optez pour le service à domicile. Déplacement + photo d'identité + impression sur place et remise des photos en main propre immédiatement</p>
           </div>
-          <div class="price-row">
-            <span class="price">49 €</span>
-            <span class="terms">Idéal PMR</span>
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price">49 €</span>
+              <span class="terms">Idéal PMR</span>
+            </div>
+            <a href="tel:0672901614" class="btn-card-rdv">
+              <i class="fa-solid fa-calendar-check"></i> Prendre RDV
+            </a>
           </div>
         </div>
       </div>
@@ -277,12 +307,47 @@ padding: 10px;
     flex-grow: 1;
   }
 
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+  }
+
   .price-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     border-top: 1px solid var(--border-color);
-    padding-top: 20px;
+    padding-top: 16px;
+  }
+
+  .btn-card-rdv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  }
+
+  .btn-card-rdv:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(197, 168, 128, 0.35);
+  }
+
+  .btn-card-rdv i {
+    font-size: 0.85rem;
   }
 
   .price {

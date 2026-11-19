@@ -80,9 +80,11 @@
 
         <div class="studio-floating-tag glass">
           <div class="tag-header">
-            <div class="tag-icon">
-              <i class="fa-solid fa-camera"></i>
-            </div>
+            <img 
+              src="/portrait Fabien Marceau.jpg" 
+              alt="Fabien Marceau - Photographe professionnel à Thurins" 
+              class="tag-avatar"
+            />
             <div>
               <h3>Studio Photo Fabien Marceau</h3>
               <p>Thurins (69510) — Monts du Lyonnais</p>
@@ -320,6 +322,17 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .tag-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
     flex-shrink: 0;
   }
 
