@@ -81,7 +81,7 @@
         <div class="studio-floating-tag glass">
           <div class="tag-header">
             <img 
-              src="/portrait Fabien Marceau.jpg" 
+              src="/portrait-fabien-marceau.jpg" 
               alt="Fabien Marceau - Photographe professionnel à Thurins" 
               class="tag-avatar"
             />
